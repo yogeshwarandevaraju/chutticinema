@@ -4361,12 +4361,11 @@ ul {
 /* Copyright Bar */
 
 .footer-bottom {
+ position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: center;
   min-height: 76px;
-  border-top: 1px solid #303035;
 }
 
 .footer-bottom p {
@@ -4374,6 +4373,8 @@ ul {
   color: #92929B;
   font-size: 12px;
   line-height: 1.7;
+  text-align: center;
+
 }
 
 .footer-back-top {
@@ -4385,6 +4386,9 @@ ul {
   font-weight: 700;
   text-decoration: none;
   transition: color 0.25s ease;
+  position: absolute;
+  right: 0;
+
 }
 
 .footer-back-top:hover {
@@ -4442,5 +4446,741 @@ ul {
     justify-content: center;
     gap: 12px;
     padding: 20px 0;
+  }
+}
+
+/* Footer Legal Notice */
+
+.footer-legal-notice {
+  padding: 14px 0 18px;
+  border-top: 1px solid #252529;
+  color: #85858D;
+  font-size: 11px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .footer-legal-notice {
+    padding: 12px 0 16px;
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================
+   CHUTTI CINEMA - RESPONSIVE GALLERY
+========================================= */
+
+.cinema-gallery {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(55px, 7vw, 95px) 24px;
+  background: #171719;
+  color: #FFFFFF;
+}
+
+.gallery-container {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+}
+
+/* Section Heading */
+
+.gallery-heading {
+  max-width: 720px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.gallery-eyebrow {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #FFB800;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+.gallery-heading h2 {
+  margin: 0 0 16px;
+  color: #FFFFFF;
+  font-family: "Nunito", sans-serif;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+
+.gallery-heading h2 span {
+  color: #FF8500;
+}
+
+.gallery-heading > p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #C5C5CB;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* Gallery Grid */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 260px;
+  gap: 18px;
+  width: 100%;
+}
+
+.gallery-card {
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid #38383D;
+  border-radius: 14px;
+  background: #26262B;
+}
+
+/* Wide feature cards on desktop */
+
+.gallery-card-large {
+  grid-column: span 2;
+}
+
+/* Image fills the complete card */
+
+.gallery-card img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+/* Dark gradient behind text */
+
+.gallery-card::after {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  content: "";
+  background: linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 0%) 20%,
+    rgb(0 0 0 / 25%) 48%,
+    rgb(0 0 0 / 88%) 100%
+  );
+  pointer-events: none;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.045);
+}
+
+/* Text overlay */
+
+.gallery-overlay {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: clamp(16px, 2vw, 25px);
+  color: #FFFFFF;
+}
+
+.gallery-category {
+  display: inline-block;
+  margin-bottom: 9px;
+  color: #FFB800;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  line-height: 1.5;
+}
+
+.gallery-overlay h3 {
+  margin: 0 0 7px;
+  color: #FFFFFF;
+  font-family: "Nunito", sans-serif;
+  font-size: clamp(18px, 2vw, 25px);
+  font-weight: 900;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.gallery-overlay p {
+  margin: 0;
+  color: #E6E6E8;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Future Gallery Notice */
+
+.gallery-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 26px;
+  padding: 20px 22px;
+  border: 1px solid #3B3326;
+  border-radius: 12px;
+  background: #26262B;
+}
+
+.gallery-note-icon {
+  display: grid;
+  flex: 0 0 36px;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #FFB800;
+  color: #171719;
+  font-size: 19px;
+}
+
+.gallery-note p {
+  min-width: 0;
+  margin: 0;
+  color: #C5C5CB;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.gallery-note strong {
+  color: #FFB800;
+}
+
+/* Bottom CTA */
+
+.gallery-cta {
+  margin-top: 42px;
+  padding: clamp(28px, 4vw, 45px) 22px;
+  border: 1px solid #38383D;
+  border-radius: 16px;
+  background: #202023;
+  text-align: center;
+}
+
+.gallery-cta h3 {
+  margin: 0 0 12px;
+  color: #FFFFFF;
+  font-family: "Nunito", sans-serif;
+  font-size: clamp(23px, 3vw, 32px);
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.gallery-cta > p {
+  margin: 0 0 23px;
+  color: #C5C5CB;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.gallery-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  max-width: 100%;
+  padding: 13px 21px;
+  border-radius: 8px;
+  background: linear-gradient(110deg, #FF8500, #FFB800);
+  color: #171719;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.gallery-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   TABLET: TWO COLUMNS
+========================================= */
+
+@media (max-width: 900px) {
+  .cinema-gallery {
+    padding-inline: 22px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 245px;
+    gap: 15px;
+  }
+
+  .gallery-card-large {
+    grid-column: span 1;
+  }
+
+  /* Let the final feature image use the full row */
+  .gallery-card:last-child {
+    grid-column: span 2;
+  }
+
+  .gallery-overlay {
+    padding: 18px;
+  }
+
+  .gallery-overlay h3 {
+    font-size: 21px;
+  }
+}
+
+/* =========================================
+   MOBILE: ONE COLUMN
+========================================= */
+
+@media (max-width: 600px) {
+  .cinema-gallery {
+    padding: 58px 16px;
+  }
+
+  .gallery-heading {
+    margin-bottom: 29px;
+  }
+
+  .gallery-eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .gallery-heading h2 {
+    font-size: clamp(29px, 8vw, 38px);
+    letter-spacing: -0.5px;
+  }
+
+  .gallery-heading > p {
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .gallery-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: 250px;
+    gap: 14px;
+  }
+
+  .gallery-card,
+  .gallery-card-large,
+  .gallery-card:last-child {
+    grid-column: auto;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .gallery-card {
+    border-radius: 12px;
+  }
+
+  .gallery-overlay {
+    padding: 18px;
+  }
+
+  .gallery-category {
+    margin-bottom: 7px;
+    font-size: 9px;
+  }
+
+  .gallery-overlay h3 {
+    margin-bottom: 6px;
+    font-size: 21px;
+  }
+
+  .gallery-overlay p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .gallery-note {
+    gap: 11px;
+    margin-top: 20px;
+    padding: 16px;
+  }
+
+  .gallery-note-icon {
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .gallery-note p {
+    font-size: 11px;
+  }
+
+  .gallery-cta {
+    margin-top: 28px;
+    padding: 29px 18px;
+    border-radius: 12px;
+  }
+
+  .gallery-cta h3 {
+    font-size: 25px;
+  }
+
+  .gallery-cta > p {
+    font-size: 12px;
+  }
+
+  .gallery-btn {
+    width: 100%;
+    box-sizing: border-box;
+    padding-inline: 12px;
+    font-size: 12px;
+  }
+}
+
+/* Small phones */
+
+@media (max-width: 360px) {
+  .cinema-gallery {
+    padding-inline: 12px;
+  }
+
+  .gallery-grid {
+    grid-auto-rows: 235px;
+  }
+
+  .gallery-overlay {
+    padding: 14px;
+  }
+
+  .gallery-overlay h3 {
+    font-size: 19px;
+  }
+
+  .gallery-cta h3 {
+    font-size: 22px;
+  }
+}
+
+/* Respect reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-card img,
+  .gallery-btn {
+    transition: none;
+  }
+}
+
+/* =========================
+   SCHOOL ENQUIRY FORM
+========================= */
+
+.enquiry-section {
+  padding: 95px 24px;
+  background: #FFF8EB;
+  color: #171719;
+}
+
+.enquiry-container {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.enquiry-heading {
+  max-width: 750px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.enquiry-eyebrow {
+  color: #C96A00;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.enquiry-heading h2 {
+  margin: 15px 0;
+  font-family: "Nunito", sans-serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.enquiry-heading h2 span {
+  color: #E87800;
+}
+
+.enquiry-heading > p {
+  margin: 0;
+  color: #66636A;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.enquiry-card {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  overflow: hidden;
+  border: 1px solid #E8DFD1;
+  border-radius: 20px;
+  background: #FFFFFF;
+  box-shadow: 0 15px 45px rgb(36 26 10 / 7%);
+}
+
+/* Information Panel */
+
+.enquiry-info {
+  padding: 42px 35px;
+  background: #171719;
+  color: #FFFFFF;
+}
+
+.enquiry-film-icon {
+  display: grid;
+  place-items: center;
+  width: 55px;
+  height: 55px;
+  margin-bottom: 25px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #FF8500, #FFB800);
+  color: #171719;
+  font-size: 23px;
+}
+
+.enquiry-info h3 {
+  margin: 0 0 15px;
+  font-family: "Nunito", sans-serif;
+  font-size: 29px;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.enquiry-info > p {
+  margin: 0;
+  color: #C5C5CB;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.enquiry-points {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  margin-top: 28px;
+}
+
+.enquiry-points div {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  color: #E8E8EB;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.enquiry-points div span {
+  color: #FFB800;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.enquiry-direct-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid #39393E;
+}
+
+.enquiry-direct-contact > span {
+  margin-bottom: 3px;
+  color: #AFAFB7;
+  font-size: 12px;
+}
+
+.enquiry-direct-contact a {
+  color: #FFB800;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.enquiry-direct-contact a:hover {
+  color: #FF8500;
+}
+
+/* Form Panel */
+
+.enquiry-form {
+  padding: 42px;
+  min-width: 0;
+}
+
+.enquiry-form-heading {
+  margin-bottom: 25px;
+}
+
+.enquiry-form-heading h3 {
+  margin: 0 0 7px;
+  font-family: "Nunito", sans-serif;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.enquiry-form-heading p {
+  margin: 0;
+  color: #77737B;
+  font-size: 12px;
+}
+
+.enquiry-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  margin-bottom: 19px;
+}
+
+.enquiry-field label {
+  color: #302D33;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.enquiry-field input,
+.enquiry-field select,
+.enquiry-field textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 47px;
+  padding: 12px 14px;
+  border: 1px solid #DDD9D2;
+  border-radius: 8px;
+  outline: none;
+  background: #FFFFFF;
+  color: #171719;
+  font: inherit;
+  font-size: 13px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.enquiry-field textarea {
+  min-height: 115px;
+  resize: vertical;
+}
+
+.enquiry-field input::placeholder,
+.enquiry-field textarea::placeholder {
+  color: #A5A1A8;
+}
+
+.enquiry-field input:focus,
+.enquiry-field select:focus,
+.enquiry-field textarea:focus {
+  border-color: #FF8500;
+  box-shadow: 0 0 0 3px rgb(255 133 0 / 12%);
+}
+
+.enquiry-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Submit Button */
+
+.enquiry-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 50px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(110deg, #FF8500, #FFB800);
+  color: #171719;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.enquiry-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgb(255 133 0 / 20%);
+}
+
+.enquiry-privacy-note {
+  margin: 13px 0 0;
+  color: #85818A;
+  font-size: 11px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* Hidden spam trap */
+
+.enquiry-honeypot {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+}
+
+/* Responsive */
+
+@media (max-width: 850px) {
+  .enquiry-card {
+    grid-template-columns: 1fr;
+  }
+
+  .enquiry-info {
+    padding: 35px;
+  }
+
+  .enquiry-form {
+    padding: 35px;
+  }
+}
+
+@media (max-width: 520px) {
+  .enquiry-section {
+    padding: 65px 16px;
+  }
+
+  .enquiry-info,
+  .enquiry-form {
+    padding: 27px 21px;
+  }
+
+  .enquiry-info h3 {
+    font-size: 26px;
+  }
+
+  .enquiry-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .enquiry-heading > p {
+    font-size: 14px;
   }
 }
